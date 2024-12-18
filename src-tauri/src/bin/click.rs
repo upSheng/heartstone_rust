@@ -39,4 +39,3 @@ fn callback(event: Event) {
         None => (),
     }
 }
-
