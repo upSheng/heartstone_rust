@@ -1,52 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>heart-stone</title>
     <script type="module" src="/main.js" defer></script>
-    <script type="module">
-      import { createApp, ref } from '/vue.esm-browser.js'
-      createApp({
-        setup() {
-          const message = ref('ggyyyHello1 111 Vue!')
-          return {
-            message
-          }
-        }
-      }).mount('#app')
-    </script>
 
-  </head>
+</head>
 
-  <body>
-    <main class="container">
-      <h1>Welcome to Tauri</h1>
+<body>
+<main class="container">
+    <h1>Welcome to Tauri</h1>
+    <p>Click on the Tauri logo to learn more about the framework</p>
 
-      <div class="row">
-<!--        <a href="https://tauri.app" target="_blank">-->
-<!--          <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />-->
-<!--        </a>-->
-<!--        <a-->
-<!--          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"-->
-<!--          target="_blank"-->
-<!--        >-->
-<!--          <img-->
-<!--            src="/assets/javascript.svg"-->
-<!--            class="logo vanilla"-->
-<!--            alt="JavaScript logo"-->
-<!--          />-->
-<!--        </a>-->
-      </div>
-      <p>Click on the Tauri logo to learn more about the framework</p>
+    <div id="app">
+            <p>{{message.name}}</p>
+            <input v-model="message.name"  placeholder="ccc.11"/>
 
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-      <p id="greet-msg"></p>
-      <div id="app">{{ message }}</div>
-    </main>
-  </body>
+        <div>
+            <p>{{message.card}}</p>
+        </div>
+
+        <div style="margin-top: 20px">
+            <button @click="aa()">aa</button>
+        </div>
+        <div style="margin-top: 20px">
+            <button @click="login()">login</button>
+        </div>
+        <div style="margin-top: 20px">
+            <button @click="getData()">getData</button>
+        </div>
+        <div style="margin-top: 20px">
+            <button @click="getCardName(message.name)">getCardName</button>
+        </div>
+    </div>
+</main>
+</body>
 </html>
